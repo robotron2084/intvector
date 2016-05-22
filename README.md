@@ -3,7 +3,7 @@ A simple class for those who need an integer vector (x,y) struct for c# gamedev 
 
  * Implements equality operators.
  * Has helper methods such as Left(), Right(), Up(), Down()
- * Utility classes for translating arrays of vectors.
+ * Utility classes for translating/rotating arrays of vectors.
  * Serializable.
  * Useful statics for IntVector2.zero, IntVector2.one, IntVector2.neg1.
 
