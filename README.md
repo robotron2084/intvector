@@ -7,4 +7,4 @@ A simple class for those who need an integer vector (x,y) struct for c# gamedev 
  * Serializable.
  * Useful statics for IntVector2.zero, IntVector2.one, IntVector2.neg1.
 
-
+[This is part of the Enemy Hideout Code Archive](http://enemyhideout.com/2016/05/free-code-from-the-hideout/)
