@@ -17,6 +17,11 @@ public class IntVector2Util
     return retval;
   }
 
+  public static IntVector2 Offset(IntVector2 pos, IntVector2 offset)
+  {
+    return new IntVector2(pos.x + offset.x, pos.y + offset.y);
+  }
+
   public static IntVector2 xRot0 = new IntVector2(1,0);
   public static IntVector2 yRot0 = new IntVector2(0,1);
 
@@ -32,7 +37,7 @@ public class IntVector2Util
   /**
    * Rotates in 90 degree increments and then translates the points with the 
    * given offset.
-   */
+     */
   public static IntVector2[] Rotate(IntVector2[] input, int rotation, IntVector2 offset)
   {
     IntVector2 xRot = xRot0;
@@ -57,7 +62,7 @@ public class IntVector2Util
       yRot = yRot270;
       break;
       default:
-      throw new System.Exception("Rotate requires 90 degree rotations.");
+      throw new System.Exception("Rotate() requires 90 degree rotations.");
     }
 
     IntVector2[] retval = new IntVector2[input.Length];
@@ -69,6 +74,49 @@ public class IntVector2Util
       retval[i] = new IntVector2(x  + offset.x, y + offset.y);
     }
     return retval;
+  }
+
+  public static IntVector2 GetDirection(IntVector2 start, IntVector2 end)
+  {
+    if(start.x == end.x)
+    {
+      //no east/west
+      if(start.y == end.y)
+      {
+        return IntVector2.zero;
+      }else if(start.y < end.y)
+      {
+        return IntVector2.north;
+      }else{
+        return IntVector2.south;
+      }
+
+    }else if(start.x < end.x)
+    {
+      //east
+      if(start.y == end.y)
+      {
+        return IntVector2.east;
+      }else if(start.y < end.y)
+      {
+        return IntVector2.northeast;
+      }else{
+        return IntVector2.southeast;
+      }
+
+    }else
+    {
+      //west
+      if(start.y == end.y)
+      {
+        return IntVector2.west;
+      }else if(start.y < end.y)
+      {
+        return IntVector2.northwest;
+      }else{
+        return IntVector2.southwest;
+      }
+    }
   }
 
 }

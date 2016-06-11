@@ -7,6 +7,15 @@ public struct IntVector2
   public static IntVector2 zero = new IntVector2(0,0);
   public static IntVector2 neg1 = new IntVector2(-1,-1);
   public static IntVector2 one = new IntVector2(1,1);
+  
+  public static IntVector2 north = new IntVector2(0,1);
+  public static IntVector2 south = new IntVector2(0,-1);
+  public static IntVector2 east = new IntVector2(1,0);
+  public static IntVector2 west = new IntVector2(-1,0);
+  public static IntVector2 northeast = new IntVector2(1,1);
+  public static IntVector2 northwest = new IntVector2(-1,1);
+  public static IntVector2 southeast = new IntVector2(1,-1);
+  public static IntVector2 southwest = new IntVector2(-1,-1);
 
   public int x;
   public int y;
